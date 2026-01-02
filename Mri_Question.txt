@@ -1,0 +1,73 @@
+Questions 
+
+
+Are the images RGB or grayscale single-channel?
+
+Are image filenames or a CSV mapping available that contain patient/subject IDs? (We must group by subject to avoid data leakage.)
+
+Where are the labels stored? (folders named by class, or single CSV file with filename → CDR?)
+
+Confirm dataset path (you gave): C:\Users\sanja\Desktop\MRI_Project\AD_DATASET\Data — correct?
+
+Desired input image size (suggest 224×224). Accept default 224?
+
+Do you want transfer learning (pretrained ResNet/EfficientNet) or train-from-scratch CNN? (I recommend transfer learning for speed and accuracy.)
+
+GPU availability: does your Jupyter environment have CUDA GPU and torch.cuda.is_available() returns True? If not, do you still want GPU-optimized code (it will fall back to CPU)?
+
+Preferred train/val/test split? (suggest subject-stratified split: 70% train / 15% val / 15% test)
+
+Max epochs and early stopping patience? (suggest 30–50 epochs with patience=7)
+
+Target metric to pick best model: validation macro F1 or validation accuracy? (I recommend macro F1 because classes are imbalanced.)
+
+Save model path and filename prefix? (default: ./models/best_model.pth)
+
+Do you want extra techniques like mixup, label smoothing, or focal loss? (I recommend focal loss + weighted sampler + augmentation.)
+
+Do you require strict >=90% overall accuracy or is macro F1 more important? (90% may be unrealistic depending on data; confirm.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+answer 
+
+
+1)Are the images RGB or grayscale single-channel? - > Not sure  
+
+2)Are image filenames --> No CSV , the File as Like this -->OAS1_0028_MR1_mpr-1_100
+
+3) Where are the labels stored? - > 4 Folder inside all the images are Present no Labels Separately  
+
+4) dataset path is correct 
+ 
+5)(86437, 128, 128, 3)
+
+6)Do you want transfer learning (pretrained ResNet/EfficientNet) or train-from-scratch CNN? (I recommend transfer learning for speed and accuracy.) --> Use ONly CNN
+
+7)GPU availability: does your Jupyter environment have CUDA GPU and torch.cuda.is_available() returns True? If not, do you still want GPU-optimized code (it will fall back to CPU)?-->GPU is available 
+
+8)Preferred train/val/test split? (suggest subject-stratified split: 70% train / 15% val / 15% test) -->sure
+
+9)Max epochs and early stopping patience? (suggest 30–50 epochs with patience=7) --> 20 epochs 
+
+10)Fine As u Wish 
+
+11)Save model path and filename prefix? (default: ./models/best_model.pth) --> sure 
+
+12) Do you want extra techniques like mixup, label smoothing, or focal loss? (I recommend focal loss + weighted sampler + augmentation.) --> Go for it 
+
+13)Do you require strict >=90% overall accuracy or is macro F1 more important? (90% may be unrealistic depending on data; confirm.) --> Try making the Accuracy > 90%
+
+also save the best model 
